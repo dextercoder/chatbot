@@ -17,8 +17,13 @@ class gpt:
         }
         # ChatGPT API的URL
         url = "https://api.openai.com/v1/chat/completions"
+
         # ChatGPT API的访问密钥
-        api_key = "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"
+
+        # api_key = "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"
+
+        api_key = "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"  # my
+
         # 请求参数
         parameters = {
             "model": "gpt-3.5-turbo-0301",  # gpt-3.5-turbo-0301
@@ -31,7 +36,7 @@ class gpt:
         }
         # 发送请求
         response = requests.post(url, headers=headers, json=parameters, proxies=proxies)
-
+        print("######",response)
 
         # 解析响应
         if response.status_code == 200:
@@ -40,6 +45,7 @@ class gpt:
             # return text
 
             data = response.json()
+            print(data)
             return data
         else:
             print(response)
@@ -68,6 +74,9 @@ class gpt:
     #             print("Goodbye!")
     #             break
 
+message = [{"role": "user", "content": "hello"}]
+chat = gpt()
+chat.send_request(message)
 
 # if __name__ == '__main__':
 #     messages = [{"role": "system", "content": "你是一个助手"}]  # 初始化prompt
