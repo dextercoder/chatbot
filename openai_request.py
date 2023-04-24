@@ -22,8 +22,8 @@ class gpt:
 
         # api_key = "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"
 
-        api_key = "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"  # my
-
+        # api_key = "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"  # my
+        api_key = "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"
         # 请求参数
         parameters = {
             "model": "gpt-3.5-turbo-0301",  # gpt-3.5-turbo-0301
